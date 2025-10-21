@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title | The Dev Anvil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="Images/logo_small(without bg, reduced size).png">
+</head>
+<body>
+    <header>
+        <div class="primary-header">
+            <a href="main-blog-page.html" class="blog-logo">
+                <img src="Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+            </a>
+        </div>
+
+        <nav class="secondary-nav-bar">
+            <a href="main-blog-page.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="https://kt-portfolio-website.vercel.app" target="_blank">Portfolio & Archive</a>
+            <a href="development-page.html">Under Development</a>
+        </nav>
+    </header>
+
+    <div class="post-container">
+        
+        <article class="main-article">
+            <img src="Images/article-hero.jpg" alt="Featured image for this article" class="article-hero-image">
+            
+            <h1>How to Structure Your New Dedicated Blog Site</h1>
+            <p class="post-meta">By KT | October 18, 2025</p>
+            
+            <p>Welcome to the first post on the new site! As you can see, the layout is much cleaner and focused on delivering a great reading experience, just like the news sites you showed me.</p>
+
+            <h2>The Importance of Layout</h2>
+            <p>The layout uses a CSS Grid structure to separate the main content from the supplementary information in the sidebar. This ensures readers stay focused on the text while still having easy access to related content.</p>
+
+            <h3>Code Snippet Example</h3>
+            <pre><code>
+/* CSS for the main layout */
+.post-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+}
+            </code></pre>
+            <p>This is where the rest of your article content would continue...</p>
+
+        </article>
+        
+        <aside class="sidebar">
+            <h4>LATEST NEWS / TRENDING</h4>
+            <ul>
+                <li><a href="#">Why Static Sites Are Great for Blogs</a></li>
+                <li><a href="#">Debugging with the Browser Console</a></li>
+                <li><a href="#">Setting up Vercel for the First Time</a></li>
+                <li><a href="#">My Old Blog Archive (Link to Portfolio)</a></li>
+            </ul>
+        </aside>
+
+        <a href="main-blog-page.html" class="back-link">← Back to all posts</a>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

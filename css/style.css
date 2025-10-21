@@ -1,0 +1,206 @@
+/* --- 1. Global Reset & Typography --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Very light gray background */
+    color: #212529; /* Dark gray text */
+}
+
+a {
+    color: #007bff; /* Standard blue link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: #343a40; /* Slightly darker headings */
+    font-weight: 700;
+}
+
+/* --- 2. Header and Navigation (Structured Dark Theme) --- */
+
+/* Primary Header Row (For Logo) */
+.primary-header {
+    background-color: #212529; /* Dark background color */
+    padding: 20px 0;
+    text-align: center; /* Center the logo horizontally */
+}
+
+.blog-logo {
+    display: inline-block; /* Allows the logo to be centered */
+    height: 250px; /* Adjusted to a visible, professional header height (Was 250px) */
+}
+
+.blog-logo img {
+    height: 100%;
+    width: auto;
+}
+
+/* Secondary Navigation Row (For Links) */
+.secondary-nav-bar {
+    background-color: #343a40; /* Slightly lighter dark color for contrast */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.secondary-nav-bar a {
+    margin: 0 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #f8f9fa; /* Light text color for contrast on dark background */
+    font-size: 0.9rem;
+    padding: 5px 0; /* Vertical padding */
+    transition: color 0.3s;
+}
+
+.secondary-nav-bar a:hover {
+    color: #ffc107; /* Your yellow accent color on hover */
+    text-decoration: none;
+}
+
+/* --- 3. Main Layout & Structure --- */
+.site-main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- 4. Index Page Styles (Blog List) --- */
+.headline-banner { 
+    background-color: #ffffff;
+    border-bottom: 3px solid #343a40;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.post-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.post-card.featured-post { 
+    grid-column: span 3;
+    border: 1px solid #e9ecef;
+}
+
+.post-card:hover {
+    box-shadow: 0 10px 20px rgba(31, 31, 31, 0.5);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 15px;
+}
+
+.post-content h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.post-meta {
+    font-size: 1em; 
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #343a40;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* --- 5. Post Detail Page Layout (Using Grid for Main Content + Sidebar) --- */
+.post-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.article-hero-image { 
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; 
+    margin-bottom: 20px;
+}
+
+.main-article pre { 
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    overflow-x: auto;
+}
+
+.sidebar {
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+.sidebar h4 {
+    border-bottom: 2px solid #adb5bd;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar li a {
+    display: block;
+    color: #343a40;
+}
+
+/* --- 6. Footer --- */
+.site-footer { 
+    text-align: center;
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    margin-top: 50px;
+}
+
+/* --- 7. Responsive Design --- */
+@media (max-width: 992px) {
+    /* Stack the content and sidebar vertically on smaller screens */
+    .post-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,37 @@
+/* --- 8. About Page Specific Styles --- */
+/* .post-container styles are already defined, giving us a 2-column layout (content + sidebar) */
+
+.about-photo {
+    /* Style for your personal photo on the about page */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.about-sidebar-profile {
+    text-align: center;
+    padding: 10px;
+}
+
+.about-sidebar-profile h4 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 1.5rem;
+    color: #343a40; /* Darker color for social icons */
+}
+
+.social-links a:hover {
+    color: #ffc107; /* Yellow highlight on hover */
+    text-decoration: none;
+}

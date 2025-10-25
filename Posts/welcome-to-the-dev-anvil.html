@@ -60,6 +60,23 @@
             <p>
                 I’m incredibly excited about what we're going to build together here. Thank you for joining me on this new adventure.
             </p>
+
+            <br>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = window.location.href; 
+                this.page.identifier = 'welcome-to-the-dev-anvil'; 
+                };
+                
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://the-dev-anvil.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </article>
         
         <aside class="sidebar">
@@ -79,5 +96,7 @@
     <footer class="site-footer">
         <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
     </footer>
+
+    <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
 </body>
 </html>

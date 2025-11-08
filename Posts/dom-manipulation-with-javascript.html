@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation in JavaScript | The Dev Anvil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+</head>
+<body>
+    <header>
+        <div class="primary-header">
+            <a href="../main-blog-page.html" class="blog-logo">
+                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+            </a>
+        </div>
+
+        <nav class="secondary-nav-bar">
+            <a href="../main-blog-page.html">Home</a>
+            <a href="../about-me.html">About</a>
+            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="post-container">
+        
+        <article class="main-article">
+            <img src="../Images/dom manipulation.png" alt="DOM Manipulation in JavaScript" class="article-hero-image">
+            
+            <h1>DOM Manipulation in JavaScript</h1>
+            <p class="post-meta">By KT | November 8, 2025</p>
+            
+            <p>
+                First of all, DOM stands for Document Object Model and it a programming interface for web documents. It represents the structure of HTML or XML documents as a tree of objects, where each part of the document (elements, attributes, text, etc.) is a node. This structure allows programming languages, primarily JavaScript, to dynamically access, modify, add, or remove elements and content of a web page after it has loaded. 
+            </p>
+            <h3>Key Concepts of DOM Manipulation:</h3>
+            <ul>
+                <li><b>Document:</b> Refers to the entire web page loaded in the browser.</li>
+                <li><b>Object</b>: Each HTML element (like &lt;body&gt;, &lt;div&gt;, &lt;h1&gt;, etc.) is treated as a JavaScript object with its own properties and methods.</li>
+                <li><b>Model</b>: Represents the hierarchical, tree-like structure of the document, showing the parent-child relationships between different nodes. </li>
+            </ul>
+            <h3>What is DOM Tree?</h3>
+            <p>
+                The structural representation created by the DOM is very much like a tree. The browser uses the DOM tree representation it builds from an HTML document to determine what to render on a web page. For example, a visual representation of a DOM tree will look like this:
+            </p>
+            <img src="../Images/DOM-tree.png" alt="An Image of a DOM tree" class="article-hero-image" style="height: 500px; width: auto;">
+            <p>
+                The DOM organizes the entire document into a logical tree that illustrates the relationships between different parts of the page, much like a family tree with parents, children, and siblings. 
+            </p>
+            <ul>
+                <li><b>Root Node</b>: At the very top of the hierarchy is the Document node, which represents the entire web page and serves as the entry point for all other nodes.</li>
+                <li><b>Parent and Child Nodes</b>: Nodes directly contained within another node are its children. The containing node is the parent. For example, the &lt;body&gt; element is a child of the &lt;html&gt; element, and the &lt;html&gt; element is the parent of both &lt;head&gt; and &lt;body&gt;.</li>
+                <li><b>Sibling Nodes</b>: Nodes that share the same parent are called siblings. For example, the &lt;head&gt; and &lt;body&gt; elements are siblings.</li>
+            </ul>
+            <p>
+                The primary purpose of the DOM tree is to provide a programmatic interface (API) that allows scripts, particularly JavaScript, to interact with the web page. By treating the document structure as a collection of objects, JavaScript can:
+            </p>
+            <ul>
+                <li>Navigate the tree (traverse relationships between nodes).</li>
+                <li>Access specific nodes to read their properties.</li>
+                <li>Modify the content, structure, and styles of nodes dynamically.</li>
+                <li>Add or remove nodes in real-time in response to user actions or other events.</li>
+            </ul>
+            <p>This functionality is what enables interactive and dynamic web experiences without requiring a full page reload. </p>
+            <h3>DOM Manipulation</h3>
+            <p>
+                DOM manipulation refers to the process of using a scripting language, primarily JavaScript, to interact with and modify the Document Object Model (DOM) of a web page. The DOM is a programming interface for HTML and XML documents, representing the page's structure as a tree of objects (nodes).
+            </p>
+            <h3>Key aspects of DOM manipulation:</h3>
+            <ol>
+                <li><b>Accessing Elements</b>: Selecting specific elements within the HTML document using methods like <em>getElementById()</em>, <em>getElementsByClassName()</em>, <em>getElementsByTagName()</em>, <em>querySelector()</em>, and <em>querySelectorAll()</em>.</li>
+                <li><b>Modifying Content</b>: Changing the text content of elements using properties like textContent or innerHTML.</li>
+                <li><b>Changing Attributes</b>: Modifying or adding attributes to elements using methods like <em>setAttribute()</em> and <em>removeAttribute()</em>.</li>
+                <li><b>Styling Elements</b>: Dynamically changing the visual appearance of elements by manipulating their style property or adding/removing CSS classes.</li>
+                <li><b>Creating and Removing Elements</b>: Adding new HTML elements to the page or removing existing ones using methods like <em>createElement()</em>, <em>appendChild()</em>, <em>removeChild()</em>, or <em>remove()</em>.</li>
+                <li><b>Event Handling</b>: Attaching event listeners to elements to make them interactive and respond to user actions (e.g., clicks, hovers, key presses) or system events.</li>
+            </ol>
+            <h3>Purpose of DOM Manipulation</h3>
+            <p>DOM manipulation is fundamental to creating dynamic and interactive web pages. It allows developers to:</p>
+            <ul>
+                <li>Update content without requiring a full page reload.</li>
+                <li>Create interactive user interfaces and respond to user input.</li>
+                <li>Add or remove elements based on application logic or user actions.</li>
+                <li>Change the styling of elements dynamically.</li>
+                <li>Build complex web applications with rich user experiences.</li>
+            </ul>
+            <h3>Conclusion</h3>
+            <p>
+                In summary, the Document Object Model (DOM) serves as the essential programming interface for web documents , structuring HTML or XML pages as a navigable tree of objects.
+            </p>
+            <p>
+                DOM manipulation is the indispensable process, primarily using JavaScript , to dynamically interact with and modify this structure. Mastering this skill involves techniques for accessing elements , modifying content and attributes , applying styles , managing elements (creation and removal) , and implementing event handling.
+            </p>
+            <p>
+                Ultimately, DOM manipulation is the foundation for creating dynamic, responsive, and interactive web pages , allowing developers to update content without a full reload and build the rich user experiences expected in modern web applications.
+            </p>
+            <p>Thank you for reading and have a wonderful rest of your day. 👋</p>
+            <br>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = windows.location.href; 
+                this.page.identifier = 'dom-manipulation-in-javascript'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://the-dev-anvil.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </article>
+        
+        <aside class="sidebar">
+            <h4>LATEST NEWS / TRENDING</h4>
+            <ul>
+                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
+                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
+            </ul>
+        </aside>
+
+        <a href="../main-blog-page.html" class="back-link">← Back to all posts</a>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+    </footer>
+
+    <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
+</body>
+</html>

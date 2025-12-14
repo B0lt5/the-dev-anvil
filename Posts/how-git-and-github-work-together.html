@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Git & GitHub Work Together | The Dev Anvil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+</head>
+<body>
+    <header>
+        <div class="primary-header">
+            <a href="../index.html" class="blog-logo">
+                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+            </a>
+        </div>
+
+        <nav class="secondary-nav-bar">
+            <a href="../index.html">Home</a>
+            <a href="../about-me.html">About</a>
+            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="post-container">
+        
+        <article class="main-article">
+            <img src="../Images/how-git-and-github-work.png" alt="[ALT TEXT FOR IMAGE]" class="article-hero-image">
+            
+            <h1>How Git & GitHub Work Together</h1>
+            <p class="post-meta">By KT | November 24, 2025</p>
+
+            <p>
+                Hey There, welcome back or welcome to The Dev Anvil, where we’re always forging better code. If you've noticed things have been a little quiet at <b>The Dev Anvil</b> recently. If you're seeing this post, thank you for sticking around! I took a necessary pause to focus on some intense professional projects, and I genuinely appreciate your patience. While the site was quiet, I was gaining new, real-world development insights that I'm now eager to share. I'm excited to be back in the swing of things, and I promise to make up for the silence by delivering high-quality, practical content, starting with this post!
+            </p>
+            <p>
+                In our last post, we discussed the foundational concept of <b>Version Control Systems (VCS)</b> and why they are essential for <em>tracking changes</em>, <em>enabling collaboration</em>, and <em>providing a safety net for any modern project</em>.
+            </p>
+            <p>
+                Today, we're diving into the tools that bring that concept to life: <b>Git and GitHub</b>. While Git is the powerful, free, and open-source version control system that runs locally on your computer (acting as a "time machine" for your code ), GitHub is the popular cloud-based platform that provides the online infrastructure, collaboration features, and remote repository hosting. Together, these two tools are fundamental to modern software development, and understanding how they work in tandem is the key to efficient teamwork and project management.
+            </p>
+            <br>
+            <h3>Git: The Version Control System</h3>
+            <p>
+                Git is a free, open-source version control system (VCS) that runs locally on your computer. Its primary purpose is to track changes in files and projects over time. Imagine it as a "time machine" for your code.
+            </p>
+            <ul>
+                <Li><b>Tracking Changes</b>: Git records every modification made to your project files, allowing you to see who made what changes, when, and why.</Li>
+                <br>
+                <li><b>Snapshots (Commits)</b>: When you're happy with a set of changes, you "commit" them. A commit is a snapshot of your project at a specific point in time, along with a message describing the changes.</li>
+                <br>
+                <Li><b>Branches</b>: Git enables you to create "branches," which are separate lines of development. This allows you to work on new features or bug fixes without affecting the main codebase until they are ready to be merged.</Li>
+                <br>
+                <li><b>Reverting Changes</b>: If you introduce a bug or decide against a particular change, Git allows you to easily revert to previous versions of your files or even entire projects.</li>
+            </ul>
+            <br>
+            <h3>Key Git Commands:</h3>
+            <ul>
+                <li><code>git init</code>: Initializes a new Git repository in a project folder.</li>
+                <li><code>git status</code>: Shows the current state of your files (modified, staged, untracked).</li>
+                <li><code>git add &lt;file(s)&gt;</code>: Adds file changes to the staging area.</li>
+                <li><code>git commit -m "message"</code>: Records the staged changes as a new commit in your local history.</li>
+                <li><code>git branch &lt;name&gt;</code>: Creates a new line of development (a branch) to work on features or fixes in isolation.</li>
+                <li><code>git checkout &lt;branch-name&gt;</code> (or <code>git switch</code>): Switches between branches.</li>
+                <li><code>git merge &lt;branch-name&gt;</code>: Integrates changes from one branch into your current active branch.</li>
+            </ul>
+            <br>
+            <h3>GitHub: The Cloud-Based Collaboration Platform</h3>
+            <p>
+                GitHub is a popular cloud-based platform that hosts Git repositories and provides a web-based interface for managing and collaborating on projects. It leverages Git's capabilities and adds features for teamwork and project management.
+            </p>
+            <ul>
+                <li><b>Remote Repositories</b>: GitHub provides a central location (a "remote repository") to store your Git projects online. This allows multiple developers to access, contribute to, and synchronize their work.</li>
+                <br>
+                <li><b>Collaboration Tools</b>: GitHub offers features like pull requests (for proposing and reviewing changes), issue tracking (for managing bugs and tasks), and project boards, all designed to streamline collaborative development.</li>
+                <br>
+                <li><b>Open Source Hosting</b>: GitHub is a widely used platform for hosting open-source projects, making it easy for developers worldwide to contribute and learn from each other's code.</li>
+            </ul>
+            <br>
+            <h3>Key GitHub Features for Collaboration:</h3>
+            <ol>
+                <li><b>Forks</b>: A fork is a personal copy of a repository that lives on your GitHub account, allowing you to experiment freely without affecting the original project.</li>
+                <br>
+                <li><b>Pull Requests (PRs)</b>: A pull request is a proposal to merge changes from your branch (or fork) into another branch (e.g., the main branch). This allows collaborators to review and discuss code before it is integrated.</li>
+            </ol>
+            <br>
+            <h3>A Basic Git & GitHub Workflow</h3>
+            <p>
+                In the last post, I talked about how to install Git on your computer, how to initialize a repository and how to connect that local repository to a remote host (e.g GitHub). Now I’m going to show you a basic Git & GitHub Workflow.
+            </p>
+            <p>
+                A common basic workflow for combining local Git development with remote GitHub hosting involves these steps:
+            </p>
+            <ol>
+                <li><b>Create a Repository on GitHub</b></li>
+                <ul>
+                    <li>Action: Start by creating an empty repository on the GitHub website.</li>
+                </ul>
+                <br>
+                <li><b>Clone the Repository to your local machine (i.e your PC)</b></li>
+                <ul>
+                    <li>Command: This downloads the remote repository and initializes the local Git environment.</li>
+                    <pre><code>     git clone 'repository-url'</code></pre>
+                </ul>
+                <br>
+                <li><b>Make changes to files in your local working directory.</b></li>
+                <ul>
+                    <li>Action: Edit, create, or delete files in the project folder.</li>
+                </ul>
+                <br>
+                <li><b>Stage the changes.</b></li>
+                <ul>
+                    <li>Command: This selects which changes will be included in the next snapshot (commit).</li>
+                    <pre><code>     git add .</code></pre>
+                </ul>
+                <br>
+                <li><b>Commit the changes locally.</b></li>
+                <ul>
+                    <li>Command: This records the staged changes as a new snapshot in your local history.</li>
+                    <pre><code>     git commit -m "Description of changes"</code></pre>
+                </ul>
+                <br>
+                <li><b>Push the committed changes to GitHub.</b></li>
+                <ul>
+                    <Li>Command: This synchronizes your local history with the remote repository on GitHub, making the changes accessible to others and serving as a crucial remote backup.</Li>
+                    <pre><code>     git push origin main</code></pre>
+                </ul>
+            </ol>
+            <br>
+            <h3>The Synergy: Git and GitHub in Action</h3>
+            <ul>
+                <li><b>Local Development with Git</b>: You use Git on your local machine to track changes, create commits, and manage branches within your project.</li>
+                <br>
+                <li><b>Pushing to GitHub</b>: Once you've made progress locally, you "push" your local Git repository to a remote repository hosted on GitHub. This makes your changes accessible to others and serves as a crucial remote backup of your work.</li>
+                <br>
+                <li><b>Collaboration via GitHub</b>: Team members can "pull" changes from the GitHub repository to their local machines, make their own modifications, and then "push" them back to GitHub. Pull requests facilitate code review and merging of changes.</li>
+            </ul>
+            <br>
+            <h3>Conclusion</h3>
+            <p>
+                In essence, you've learned that Git and GitHub represent the ultimate partnership in modern software development. <b>Git is the robust, local engine</b> — your personal time machine, meticulously tracking every snapshot, branch, and commit. <b>GitHub is the collaborative cloud platform</b> that elevates that engine, providing the critical infrastructure for remote backup, professional code review via Pull Requests, and seamless teamwork.
+            </p>
+            <p>
+                You now possess the fundamental knowledge required to adopt the standard, collaborative workflow of every professional developer. <b>Mastering the basic cycle</b> — local commits, remote pushes, and managing changes via a remote repository — is the key to working on large projects, contributing to open source, and ensuring you never lose a single line of code again.
+            </p>
+            <p>Thank you for reading and have a wonderful rest of your day. 👋</p>
+            <br>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                this.page.url = windows.location.href; 
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://the-dev-anvil.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </article>
+        
+        <aside class="sidebar">
+            <h4>LATEST NEWS / TRENDING</h4>
+            <ul>
+                <li><a href="how-git-and-github-work-together.html">How Git and GitHub Work Together</a></li>
+                <li><a href="version-control-and-why-you-should-care.html">What Are Version Control Systems and Why You Should Care</a></li>
+                <li><a href="the-power-of-css-grid-and-flexbox.html">The Power of CSS Grid and Flexbox</a></li>
+                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
+                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
+            </ul>
+        </aside>
+
+        <a href="../index.html" class="back-link">← Back to all posts</a>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+    </footer>
+
+    <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
+</body>
+</html>

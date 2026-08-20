@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation in JavaScript | The Dev Anvil</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/article.css">
     <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+    <script src="https://kit.fontawesome.com/8e0278b98b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="primary-header">
-            <a href="../index.html" class="blog-logo">
-                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span class="brand-text">The Dev Anvil</span>
             </a>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../about-me.html">About</a>
+                <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+            </nav>
         </div>
-
-        <nav class="secondary-nav-bar">
-            <a href="../index.html">Home</a>
-            <a href="../about-me.html">About</a>
-            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
-        </nav>
     </header>
 
     <div class="post-container">
@@ -29,6 +31,15 @@
             
             <h1>DOM Manipulation in JavaScript</h1>
             <p class="post-meta">By KT | November 8, 2025</p>
+
+            <div class="key-takeaways">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>The DOM is the browser's live, tree-shaped model of your HTML page.</li>
+                    <li>Grab elements with <em>querySelector</em> &amp; friends, then change their content, styles, and attributes.</li>
+                    <li>Event listeners turn a static page into an interactive experience — no page reload required.</li>
+                </ul>
+            </div>
             
             <p>
                 First of all, DOM stands for Document Object Model and it a programming interface for web documents. It represents the structure of HTML or XML documents as a tree of objects, where each part of the document (elements, attributes, text, etc.) is a node. This structure allows programming languages, primarily JavaScript, to dynamically access, modify, add, or remove elements and content of a web page after it has loaded. 
@@ -96,11 +107,12 @@
             </p>
             <p>Thank you for reading and have a wonderful rest of your day. 👋</p>
             <br>
+            <div class="disqus-heading"><h4>Join the Conversation</h4></div>
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function () {
-                this.page.url = windows.location.href; 
-                this.page.identifier = 'dom-manipulation-in-javascript'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.url = window.location.href; 
+                    this.page.identifier = 'dom-manipulation-in-javascript';
                 };
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
@@ -114,22 +126,81 @@
         </article>
         
         <aside class="sidebar">
-            <h4>LATEST NEWS / TRENDING</h4>
-            <ul>
-                <li><a href="happy-new-year-2026-post.html">Cheers to 2026!</a></li>
-                <li><a href="how-git-and-github-work-together.html">How Git and GitHub Work Together</a></li>
-                <li><a href="version-control-and-why-you-should-care.html">What Are Version Control Systems and Why You Should Care</a></li>
-                <li><a href="the-power-of-css-grid-and-flexbox.html">The Power of CSS Grid and Flexbox</a></li>
-                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
-                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
-            </ul>
+            <div class="sidebar-card">
+                <h4>Recent Posts</h4>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="happy-new-year-2026-post.html">
+                            <img class="recent-thumb" src="../Images/happy-new-year-2026.png" alt="Cheers to 2026!">
+                            <span class="recent-title">Cheers to 2026!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how-git-and-github-work-together.html">
+                            <img class="recent-thumb" src="../Images/how-git-and-github-work.png" alt="How Git and GitHub Work Together">
+                            <span class="recent-title">How Git and GitHub Work Together</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="version-control-and-why-you-should-care.html">
+                            <img class="recent-thumb" src="../Images/version-control-and-its-importance.png" alt="Version Control Systems">
+                            <span class="recent-title">What Are Version Control Systems and Why You Should Care</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="the-power-of-css-grid-and-flexbox.html">
+                            <img class="recent-thumb" src="../Images/css-grid-and-flexbox.png" alt="The Power of CSS Grid and Flexbox">
+                            <span class="recent-title">The Power of CSS Grid and Flexbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dom-manipulation-with-javascript.html">
+                            <img class="recent-thumb" src="../Images/dom manipulation.png" alt="DOM Manipulation in JavaScript">
+                            <span class="recent-title">DOM Manipulation in JavaScript</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>Popular Tags</h4>
+                <div class="tags-box">
+                    <a class="tag-pill" href="the-power-of-css-grid-and-flexbox.html">#CSS</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#JavaScript</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#DOM</a>
+                    <a class="tag-pill" href="how-git-and-github-work-together.html">#Git</a>
+                    <a class="tag-pill" href="version-control-and-why-you-should-care.html">#VCS</a>
+                </div>
+            </div>
         </aside>
 
-        <a href="../main-blog-page.html" class="back-link">← Back to all posts</a>
+        <div class="post-nav">
+            <a href="welcome-to-the-dev-anvil.html" class="prev">
+                <span class="nav-label">&larr; Previous Article</span>
+                <span class="nav-title">Forging a New Foundation: Welcome to The Dev Anvil</span>
+            </a>
+            <a href="the-power-of-css-grid-and-flexbox.html" class="next">
+                <span class="nav-label">Next Article &rarr;</span>
+                <span class="nav-title">The Power of CSS Grid and Flexbox</span>
+            </a>
+        </div>
+
+        <a href="../index.html" class="back-link">← Back to all posts</a>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span>&copy; 2025 The Dev Anvil. All Rights Reserved.</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/B0lt5" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/oluwakitan17466" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/kitan-ayoola-1471193a1/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ayoli2020@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>

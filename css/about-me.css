@@ -1,37 +1,43 @@
-/* --- 8. About Page Specific Styles --- */
-/* .post-container styles are already defined, giving us a 2-column layout (content + sidebar) */
-
-.about-photo {
-    /* Style for your personal photo on the about page */
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+/* --- About Page Specific Styles --- */
+/* .post-container, .sidebar-card, and .social-links styles come from style.css */
 
 .about-sidebar-profile {
     text-align: center;
-    padding: 10px;
 }
 
 .about-sidebar-profile h4 {
-    border-bottom: none;
-    padding-bottom: 0;
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+}
+
+.about-sidebar-profile p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0 0 6px;
 }
 
 .social-links {
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .social-links a {
     display: inline-block;
     margin: 0 8px;
-    font-size: 1.5rem;
-    color: #343a40; /* Darker color for social icons */
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-    color: #ffc107; /* Yellow highlight on hover */
-    text-decoration: none;
+    color: var(--accent-dark);
+    transform: translateY(-2px);
 }

@@ -181,3 +181,66 @@
         padding: 0 16px;
     }
 }
+
+/* --- 404 Page --- */
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.error-content {
+    max-width: 400px;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    margin: 0 0 8px;
+    letter-spacing: -0.05em;
+}
+
+.error-title {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.error-message {
+    color: var(--text-muted);
+    margin: 0 0 28px;
+    line-height: 1.7;
+}
+
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent);
+    color: #1b1f24;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-home:hover {
+    background-color: var(--accent-dark);
+    color: #1b1f24;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.error-hint {
+    margin-top: 24px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,32 @@
+.search-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.search-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+}
+
+.results-meta {
+    color: var(--text-muted);
+    margin: 0 0 22px;
+}
+
+.results-meta strong {
+    color: var(--text-main);
+}
+
+.no-results {
+    background-color: var(--bg-card);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.no-results a {
+    font-weight: 700;
+}

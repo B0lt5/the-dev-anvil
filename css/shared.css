@@ -256,13 +256,12 @@ img {
     padding: 22px;
 }
 
-.sidebar-card h4 {
+.content-column h4, .sidebar-card h4 {
     margin: 0 0 16px;
-    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text-muted);
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 2px solid var(--accent);
     display: inline-block;
 }
@@ -330,7 +329,6 @@ img {
 .site-footer {
     background-color: var(--bg-card);
     border-top: 1px solid var(--border);
-    margin-top: 48px;
     padding: 22px 0;
     margin-top: auto;
 }

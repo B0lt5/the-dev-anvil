@@ -1,22 +1,14 @@
-/* --- About Page Specific Styles --- */
-/* .post-container, .sidebar-card, and .social-links styles come from style.css */
-
+/* --- About Page Styles --- */
 .about-sidebar-profile {
     text-align: center;
+    position: sticky;
+    overflow: hidden;
+    padding-bottom: 75px;
 }
 
 .about-sidebar-profile h4 {
     font-size: 1.05rem;
     margin: 0 0 6px;
-}
-
-.about-photo {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 18px;
 }
 
 .about-sidebar-profile p {
@@ -25,19 +17,75 @@
     margin: 0 0 6px;
 }
 
-.social-links {
-    margin-top: 18px;
-}
-
-.social-links a {
+.about-photo-wrap {
     display: inline-block;
-    margin: 0 8px;
-    font-size: 1.4rem;
-    color: var(--text-muted);
-    transition: color 0.2s ease, transform 0.2s ease;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    /* z-index: 1; */
+    border-radius: 50%;
 }
 
-.social-links a:hover {
-    color: var(--accent-dark);
-    transform: translateY(-2px);
+.about-photo-wrap::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--accent);
+    position: absolute;
+    bottom: 135%;
+    right: 0;
+    left: 0;
+    opacity: 0.9;
+    transform: scale(3);
+    transition: all 0.3s linear 0s;
+}
+
+.about-sidebar-profile:hover .about-photo-wrap::before {
+    height: 100%;
+}
+
+.about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+}
+
+.about-sidebar-profile:hover .about-photo {
+    box-shadow: 0 0 0 14px var(--bg-card);
+    transform: scale(0.7);
+}
+
+/* --- Sliding social bar reveal --- */
+.about-sidebar-profile .social-links {
+    position: absolute;
+    left: 0;
+    bottom: -75px;
+    width: 100%;
+    padding: 8px 0;
+    background-color: var(--text-main);
+    transition: bottom 0.5s ease 0s;
+}
+
+.about-sidebar-profile:hover .social-links {
+    bottom: 0;
+}
+
+.about-sidebar-profile .social-links a{
+    color: var(--bg-card);
+    font-size: 1.3rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.about-sidebar-profile .social-links a:hover {
+    color: var(--accent);
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }

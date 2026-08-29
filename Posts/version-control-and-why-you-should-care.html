@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Are Version Control Systems and Why You Should Care | The Dev Anvil</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/article.css">
     <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+    <script src="https://kit.fontawesome.com/8e0278b98b.js" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
 </head>
 <body>
-    <header>
-        <div class="primary-header">
-            <a href="../index.html" class="blog-logo">
-                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span class="brand-text">The Dev Anvil</span>
             </a>
+            <form class="nav-search" action="../search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Type to search..." aria-label="Search articles">
+            </form>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../about-me.html">About</a>
+                <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+            </nav>
         </div>
-
-        <nav class="secondary-nav-bar">
-            <a href="../index.html">Home</a>
-            <a href="../about-me.html">About</a>
-            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
-        </nav>
     </header>
 
     <div class="post-container">
@@ -29,6 +43,15 @@
             
             <h1>What Are Version Control Systems and Why You Should Care</h1>
             <p class="post-meta">By KT | November 14, 2025</p>
+
+            <div class="key-takeaways">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>A VCS records every change to your project, acting as a "time machine" you can rewind at will.</li>
+                    <li>Distributed VCS (like Git) beats centralized systems: full offline work and complete redundancy.</li>
+                    <li>Branches make experimentation safe — try new ideas without risking your stable codebase.</li>
+                </ul>
+            </div>
             
             <p>
                 Hey there! Welcome back to The Dev Anvil, where we’re always forging better code. Today, we’re breaking down a topic every developer — especially beginners — must understand: Version Control Systems.
@@ -142,20 +165,29 @@
                     <li>Download: Visit the official <a href="git-scm.com" target="_blank">Git website</a> and follow the installation instructions for your operating system (Windows, macOS, or Linux).</li>
                     <br>
                     <li>Configure: Once installed, open your terminal or command prompt and run these two commands to identify yourself for future commits:</li>
-                    <pre><code>git config --global user.name "Your Name"
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>git config --global user.name "Your Name"
 git config --global user.email "youremail@example.com"
-                    </code></pre>
+                        </code></pre>
+                    </div>
                 </ul>
                 <br>
                 <li><b>Initialize a Repository</b></li>
                 <p>Every project that uses version control must start with a repository.</p>
                 <ul>
                     <li>Create Local Repository: Navigate to your project folder in your terminal and run the following command. This creates a hidden .git folder that tracks all changes:</li>
-                    <pre><code>git init</code></pre>
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>git init</code></pre>
+                    </div>
                     <br>
                     <li>Staging and Committing: Once you've made changes, you use the <b>Staging Area (or Index)</b> to select which changes you want to include in your next snapshot. This allows you to group related changes into a single, clean commit.</li>
-<pre><code>git add .          # Stages all changes (moves them to the staging area)
+<div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>git add .          # Stages all changes (moves them to the staging area)
 git commit -m "Initial commit"  # Creates the first commit </code></pre>
+                    </div>
                 </ul>
                 <br>
                 <li><b>Connect to a Remote Host</b></li>
@@ -164,8 +196,11 @@ git commit -m "Initial commit"  # Creates the first commit </code></pre>
                     <li>Create Remote: Create a new, empty repository on your chosen hosting platform (e.g., GitHub). The platform will provide you with a URL (e.g., https://github.com/user/project.git).</li>
                     <br>
                     <li>Link and Push: Link your local repository to the remote one and "push" your local commits to the cloud:</li>
-                    <pre><code>git remote add origin [Your Repository URL]
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>git remote add origin [Your Repository URL]
 git push -u origin main     #Pushes your local commits to the remote repository</code></pre>
+                    </div>
                 </ul>
                 <p>This synchronizes your local history with the remote host.</p>
                 <p>The <b>-u</b> flag in the command above is important. It tells Git to remember that your local <b>main</b> branch should track the remote <b>origin/main</b> branch, making future pushes as simple as running just <b>git push</b>.</p>
@@ -189,10 +224,11 @@ git push -u origin main     #Pushes your local commits to the remote repository<
             </p>
             <p>Thank you for reading and have a wonderful rest of your day. 👋</p>
             <br>
+            <div class="disqus-heading"><h4>Join the Conversation</h4></div>
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function () {
-                this.page.url = windows.location.href; 
+                this.page.url = window.location.href; 
                 this.page.identifier = 'version-control-and-why-you-should-care'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 
@@ -207,24 +243,85 @@ git push -u origin main     #Pushes your local commits to the remote repository<
         </article>
         
         <aside class="sidebar">
-            <h4>LATEST NEWS / TRENDING</h4>
-            <ul>
-                <li><a href="happy-new-year-2026-post.html">Cheers to 2026!</a></li>
-                <li><a href="how-git-and-github-work-together.html">How Git and GitHub Work Together</a></li>
-                <li><a href="version-control-and-why-you-should-care.html">What Are Version Control Systems and Why You Should Care</a></li>
-                <li><a href="the-power-of-css-grid-and-flexbox.html">The Power of CSS Grid and Flexbox</a></li>
-                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
-                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
-            </ul>
+            <div class="sidebar-card">
+                <h4>Recent Posts</h4>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="happy-new-year-2026-post.html">
+                            <img class="recent-thumb" src="../Images/happy-new-year-2026.png" alt="Cheers to 2026!">
+                            <span class="recent-title">Cheers to 2026!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how-git-and-github-work-together.html">
+                            <img class="recent-thumb" src="../Images/how-git-and-github-work.png" alt="How Git and GitHub Work Together">
+                            <span class="recent-title">How Git and GitHub Work Together</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="version-control-and-why-you-should-care.html">
+                            <img class="recent-thumb" src="../Images/version-control-and-its-importance.png" alt="Version Control Systems">
+                            <span class="recent-title">What Are Version Control Systems and Why You Should Care</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="the-power-of-css-grid-and-flexbox.html">
+                            <img class="recent-thumb" src="../Images/css-grid-and-flexbox.png" alt="The Power of CSS Grid and Flexbox">
+                            <span class="recent-title">The Power of CSS Grid and Flexbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dom-manipulation-with-javascript.html">
+                            <img class="recent-thumb" src="../Images/dom manipulation.png" alt="DOM Manipulation in JavaScript">
+                            <span class="recent-title">DOM Manipulation in JavaScript</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>Popular Tags</h4>
+                <div class="tags-box">
+                    <a class="tag-pill" href="how-git-and-github-work-together.html">#Git</a>
+                    <a class="tag-pill" href="version-control-and-why-you-should-care.html">#VCS</a>
+                    <a class="tag-pill" href="the-power-of-css-grid-and-flexbox.html">#CSS</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#JavaScript</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#DOM</a>
+                    <a class="tag-pill" href="happy-new-year-2026-post.html">#Goals</a>
+                </div>
+            </div>
         </aside>
+
+        <div class="post-nav">
+            <a href="the-power-of-css-grid-and-flexbox.html" class="prev">
+                <span class="nav-label">&larr; Previous Article</span>
+                <span class="nav-title">The Power of CSS Grid and Flexbox</span>
+            </a>
+            <a href="how-git-and-github-work-together.html" class="next">
+                <span class="nav-label">Next Article &rarr;</span>
+                <span class="nav-title">How Git and GitHub Work Together</span>
+            </a>
+        </div>
 
         <a href="../index.html" class="back-link">← Back to all posts</a>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span>&copy; 2025 The Dev Anvil. All Rights Reserved.</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/B0lt5" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/oluwakitan17466" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/kitan-ayoola-1471193a1/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ayoli2020@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

@@ -21,6 +21,26 @@
   <lastmod>2025-11-12T21:24:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<!-- <url>
+  <loc>https://the-dev-anvil.vercel.app/search.html</loc>
+  <lastmod>2026-08-20T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url> -->
+<url>
+  <loc>https://the-dev-anvil.vercel.app/Posts/happy-new-year-2026-post.html</loc>
+  <lastmod>2026-01-11T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-dev-anvil.vercel.app/Posts/how-git-and-github-work-together.html</loc>
+  <lastmod>2025-12-14T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-dev-anvil.vercel.app/Posts/version-control-and-why-you-should-care.html</loc>
+  <lastmod>2025-11-14T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 <url>
   <loc>https://the-dev-anvil.vercel.app/Posts/the-power-of-css-grid-and-flexbox.html</loc>
   <lastmod>2025-11-12T20:51:09+00:00</lastmod>

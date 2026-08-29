@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How Git & GitHub Work Together | The Dev Anvil</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/article.css">
     <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+    <script src="https://kit.fontawesome.com/8e0278b98b.js" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
 </head>
 <body>
-    <header>
-        <div class="primary-header">
-            <a href="../index.html" class="blog-logo">
-                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span class="brand-text">The Dev Anvil</span>
             </a>
+            <form class="nav-search" action="../search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Type to search..." aria-label="Search articles">
+            </form>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../about-me.html">About</a>
+                <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+            </nav>
         </div>
-
-        <nav class="secondary-nav-bar">
-            <a href="../index.html">Home</a>
-            <a href="../about-me.html">About</a>
-            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
-        </nav>
     </header>
 
     <div class="post-container">
@@ -29,6 +43,15 @@
             
             <h1>How Git & GitHub Work Together</h1>
             <p class="post-meta">By KT | December 14, 2025</p>
+
+            <div class="key-takeaways">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>Git is the local, open-source engine that tracks every change; GitHub is the cloud platform that hosts your repositories and powers collaboration.</li>
+                    <li>Master the core workflow cycle: <b>clone &rarr; add &rarr; commit &rarr; push</b>.</li>
+                    <li>Branches let you experiment safely, and pull requests make code review a structured, team-friendly process.</li>
+                </ul>
+            </div>
 
             <p>
                 Hey There, welcome back or welcome to The Dev Anvil, where we’re always forging better code. If you've noticed things have been a little quiet at <b>The Dev Anvil</b> recently. If you're seeing this post, thank you for sticking around! I took a necessary pause to focus on some intense professional projects, and I genuinely appreciate your patience. While the site was quiet, I was gaining new, real-world development insights that I'm now eager to share. I'm excited to be back in the swing of things, and I promise to make up for the silence by delivering high-quality, practical content, starting with this post!
@@ -100,7 +123,10 @@
                 <li><b>Clone the Repository to your local machine (i.e your PC)</b></li>
                 <ul>
                     <li>Command: This downloads the remote repository and initializes the local Git environment.</li>
-                    <pre><code>     git clone 'repository-url'</code></pre>
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>     git clone 'repository-url'</code></pre>
+                    </div>
                 </ul>
                 <br>
                 <li><b>Make changes to files in your local working directory.</b></li>
@@ -111,19 +137,28 @@
                 <li><b>Stage the changes.</b></li>
                 <ul>
                     <li>Command: This selects which changes will be included in the next snapshot (commit).</li>
-                    <pre><code>     git add .</code></pre>
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>     git add .</code></pre>
+                    </div>
                 </ul>
                 <br>
                 <li><b>Commit the changes locally.</b></li>
                 <ul>
                     <li>Command: This records the staged changes as a new snapshot in your local history.</li>
-                    <pre><code>     git commit -m "Description of changes"</code></pre>
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>     git commit -m "Description of changes"</code></pre>
+                    </div>
                 </ul>
                 <br>
                 <li><b>Push the committed changes to GitHub.</b></li>
                 <ul>
                     <Li>Command: This synchronizes your local history with the remote repository on GitHub, making the changes accessible to others and serving as a crucial remote backup.</Li>
-                    <pre><code>     git push origin main</code></pre>
+                    <div class="code-window">
+                        <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">terminal</span></div>
+                        <pre><code>     git push origin main</code></pre>
+                    </div>
                 </ul>
             </ol>
             <br>
@@ -145,11 +180,12 @@
             </p>
             <p>Thank you for reading and have a wonderful rest of your day. 👋</p>
             <br>
+            <div class="disqus-heading"><h4>Join the Conversation</h4></div>
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function () {
-                this.page.url = windows.location.href; 
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = window.location.href;
+                this.page.identifier = 'how-git-and-github-work-together';
                 };
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
@@ -163,24 +199,85 @@
         </article>
         
         <aside class="sidebar">
-            <h4>LATEST NEWS / TRENDING</h4>
-            <ul>
-                <li><a href="happy-new-year-2026-post.html">Cheers to 2026!</a></li>
-                <li><a href="how-git-and-github-work-together.html">How Git and GitHub Work Together</a></li>
-                <li><a href="version-control-and-why-you-should-care.html">What Are Version Control Systems and Why You Should Care</a></li>
-                <li><a href="the-power-of-css-grid-and-flexbox.html">The Power of CSS Grid and Flexbox</a></li>
-                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
-                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
-            </ul>
+            <div class="sidebar-card">
+                <h4>Recent Posts</h4>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="happy-new-year-2026-post.html">
+                            <img class="recent-thumb" src="../Images/happy-new-year-2026.png" alt="Cheers to 2026!">
+                            <span class="recent-title">Cheers to 2026!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how-git-and-github-work-together.html">
+                            <img class="recent-thumb" src="../Images/how-git-and-github-work.png" alt="How Git and GitHub Work Together">
+                            <span class="recent-title">How Git and GitHub Work Together</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="version-control-and-why-you-should-care.html">
+                            <img class="recent-thumb" src="../Images/version-control-and-its-importance.png" alt="Version Control Systems">
+                            <span class="recent-title">What Are Version Control Systems and Why You Should Care</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="the-power-of-css-grid-and-flexbox.html">
+                            <img class="recent-thumb" src="../Images/css-grid-and-flexbox.png" alt="The Power of CSS Grid and Flexbox">
+                            <span class="recent-title">The Power of CSS Grid and Flexbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dom-manipulation-with-javascript.html">
+                            <img class="recent-thumb" src="../Images/dom manipulation.png" alt="DOM Manipulation in JavaScript">
+                            <span class="recent-title">DOM Manipulation in JavaScript</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>Popular Tags</h4>
+                <div class="tags-box">
+                    <a class="tag-pill" href="how-git-and-github-work-together.html">#Git</a>
+                    <a class="tag-pill" href="version-control-and-why-you-should-care.html">#VCS</a>
+                    <a class="tag-pill" href="the-power-of-css-grid-and-flexbox.html">#CSS</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#JavaScript</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#DOM</a>
+                    <a class="tag-pill" href="happy-new-year-2026-post.html">#Goals</a>
+                </div>
+            </div>
         </aside>
+
+        <div class="post-nav">
+            <a href="version-control-and-why-you-should-care.html" class="prev">
+                <span class="nav-label">&larr; Previous Article</span>
+                <span class="nav-title">What Are Version Control Systems and Why You Should Care</span>
+            </a>
+            <a href="happy-new-year-2026-post.html" class="next">
+                <span class="nav-label">Next Article &rarr;</span>
+                <span class="nav-title">Cheers to 2026!</span>
+            </a>
+        </div>
 
         <a href="../index.html" class="back-link">← Back to all posts</a>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span>&copy; 2025 The Dev Anvil. All Rights Reserved.</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/B0lt5" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/oluwakitan17466" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/kitan-ayoola-1471193a1/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ayoli2020@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

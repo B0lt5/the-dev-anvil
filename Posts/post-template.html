@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Title | The Dev Anvil</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/article.css">
     <link rel="icon" type="image/png" href="../Images/logo_small(without bg, reduced size).png">
+    <script src="https://kit.fontawesome.com/8e0278b98b.js" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
 </head>
 <body>
-    <header>
-        <div class="primary-header">
-            <a href="../index.html" class="blog-logo">
-                <img src="../Images/logo_big(without bg, reduced size).png" alt="The Dev Anvil Logo">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span class="brand-text">The Dev Anvil</span>
             </a>
+            <form class="nav-search" action="../search.html" method="get" role="search">
+                <input type="text" name="q" placeholder="Type to search..." aria-label="Search articles">
+            </form>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../about-me.html">About</a>
+                <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+            </nav>
         </div>
-
-        <nav class="secondary-nav-bar">
-            <a href="../index.html">Home</a>
-            <a href="../about-me.html">About</a>
-            <a href="https://kt-portfolio-website.vercel.app" target="_blank">My Portfolio</a>
-        </nav>
     </header>
 
     <div class="post-container">
@@ -29,6 +43,15 @@
             
             <h1>How to Structure Your New Dedicated Blog Site</h1>
             <p class="post-meta">By KT | October 18, 2025</p>
+
+            <div class="key-takeaways">
+                <h4>Key Takeaways</h4>
+                <ul>
+                    <li>Keep the main column focused on reading; reserve the sidebar for related content.</li>
+                    <li>Use CSS Grid for the macro layout and Flexbox for micro-alignment inside components.</li>
+                    <li>Always end articles with a clear takeaway and a path to the next post.</li>
+                </ul>
+            </div>
             
             <p>Welcome to the first post on the new site! As you can see, the layout is much cleaner and focused on delivering a great reading experience, just like the news sites you showed me.</p>
 
@@ -36,16 +59,18 @@
             <p>The layout uses a CSS Grid structure to separate the main content from the supplementary information in the sidebar. This ensures readers stay focused on the text while still having easy access to related content.</p>
 
             <h3>Code Snippet Example</h3>
-            <pre><code>
-/* CSS for the main layout */
+            <div class="code-window">
+                <div class="code-title-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="code-name">css</span></div>
+                <pre><code>/* CSS for the main layout */
 .post-container {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
-    gap: 40px;
-}
-            </code></pre>
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+}</code></pre>
+            </div>
             <p>This is where the rest of your article content would continue...</p>
             <br>
+            <div class="disqus-heading"><h4>Join the Conversation</h4></div>
             <div id="disqus_thread"></div>
             <script>
                 /**
@@ -53,8 +78,8 @@
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
                 
                 var disqus_config = function () {
-                this.page.url = windows.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = 'POST_IDENTIFIER'; // Replace POST_IDENTIFIER with your page's unique identifier variable
                 };
                 
                 (function() { // DON'T EDIT BELOW THIS LINE
@@ -68,22 +93,82 @@
         </article>
         
         <aside class="sidebar">
-            <h4>LATEST NEWS / TRENDING</h4>
-            <ul>
-                <li><a href="happy-new-year-2026-post.html">Cheers to 2026!</a></li>
-                <li><a href="how-git-and-github-work-together.html">How Git and GitHub Work Together</a></li>
-                <li><a href="version-control-and-why-you-should-care.html">What Are Version Control Systems and Why You Should Care</a></li>
-                <li><a href="the-power-of-css-grid-and-flexbox.html">The Power of CSS Grid and Flexbox</a></li>
-                <li><a href="dom-manipulation-with-javascript.html">DOM Manipulation in JavaScript</a></li>
-                <li><a href="welcome-to-the-dev-anvil.html">Welcome to The Dev Anvil</a></li>
-            </ul>
+            <div class="sidebar-card">
+                <h4>Recent Posts</h4>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="happy-new-year-2026-post.html">
+                            <img class="recent-thumb" src="../Images/happy-new-year-2026.png" alt="Cheers to 2026!">
+                            <span class="recent-title">Cheers to 2026!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how-git-and-github-work-together.html">
+                            <img class="recent-thumb" src="../Images/how-git-and-github-work.png" alt="How Git and GitHub Work Together">
+                            <span class="recent-title">How Git and GitHub Work Together</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="version-control-and-why-you-should-care.html">
+                            <img class="recent-thumb" src="../Images/version-control-and-its-importance.png" alt="Version Control Systems">
+                            <span class="recent-title">What Are Version Control Systems and Why You Should Care</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="the-power-of-css-grid-and-flexbox.html">
+                            <img class="recent-thumb" src="../Images/css-grid-and-flexbox.png" alt="The Power of CSS Grid and Flexbox">
+                            <span class="recent-title">The Power of CSS Grid and Flexbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dom-manipulation-with-javascript.html">
+                            <img class="recent-thumb" src="../Images/dom manipulation.png" alt="DOM Manipulation in JavaScript">
+                            <span class="recent-title">DOM Manipulation in JavaScript</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>Popular Tags</h4>
+                <div class="tags-box">
+                    <a class="tag-pill" href="how-git-and-github-work-together.html">#Git</a>
+                    <a class="tag-pill" href="version-control-and-why-you-should-care.html">#VCS</a>
+                    <a class="tag-pill" href="the-power-of-css-grid-and-flexbox.html">#CSS</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#JavaScript</a>
+                    <a class="tag-pill" href="dom-manipulation-with-javascript.html">#DOM</a>
+                    <a class="tag-pill" href="happy-new-year-2026-post.html">#Goals</a>
+                </div>
+            </div>
         </aside>
+
+        <div class="post-nav">
+            <a href="../index.html" class="prev">
+                <span class="nav-label">&larr; Previous Article</span>
+                <span class="nav-title">Previous Post Title</span>
+            </a>
+            <a href="../index.html" class="next">
+                <span class="nav-label">Next Article &rarr;</span>
+                <span class="nav-title">Next Post Title</span>
+            </a>
+        </div>
 
         <a href="../index.html" class="back-link">← Back to all posts</a>
     </div>
 
     <footer class="site-footer">
-        <p>&copy; 2025 The Dev Anvil. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../Images/logo_small(without bg, reduced size).png" alt="The Dev Anvil Logo">
+                <span>&copy; 2025 The Dev Anvil. All Rights Reserved.</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/B0lt5" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/oluwakitan17466" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/kitan-ayoola-1471193a1/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ayoli2020@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script id="dsq-count-scr" src="//the-dev-anvil.disqus.com/count.js" async></script>
@@ -91,5 +176,6 @@
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>
